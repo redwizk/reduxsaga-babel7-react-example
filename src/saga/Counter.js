@@ -30,9 +30,10 @@ function* fetchAsyncIncrease(){
     }
 }
 
-export default function* watchCounter() {
-    console.log('run watchCounter');
-    yield takeEvery(counterActions.INCREMENT     , fetchIncrease     );
-    yield takeEvery(counterActions.DECREMENT     , fetchDecrease     );
-    yield takeEvery(counterActions.ASYNCINCREMENT, fetchAsyncIncrease);
-}
+const Counter = [
+        takeEvery(counterActions.INCREMENT, fetchIncrease),
+        takeEvery(counterActions.DECREMENT, fetchDecrease),
+        takeEvery(counterActions.ASYNCINCREMENT, fetchAsyncIncrease)
+    ];
+
+export default Counter;

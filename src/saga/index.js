@@ -1,12 +1,8 @@
 import { all, spawn } from 'redux-saga/effects'
 
-import watchCounter from './Counter';
-
-function* combineSaga() {
-    yield watchCounter();
-}
+import Counter from './Counter';
 
 export default function* watchSaga() {
     console.log('run watchSaga');
-    yield spawn(combineSaga);
+    yield all([...Counter]);
 }
