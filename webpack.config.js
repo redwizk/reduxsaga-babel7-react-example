@@ -1,6 +1,7 @@
 'use strict';
 
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
 	entry: ["@babel/polyfill", "./src/index.js"],
@@ -16,6 +17,10 @@ module.exports = {
 		inline: true,
 		port: 80,
 		contentBase: __dirname + '/public'
+	},
+	
+	resolve: {
+		modules: ['node_modules', path.resolve(__dirname, 'src')],
 	},
 
 	module: {

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as counterActions from '../redux/Counter';
+import * as counterActions from 'redux/reducer/Counter';
+
 class App extends Component {
   
   handleAsyncAction = () => {
