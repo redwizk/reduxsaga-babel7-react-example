@@ -1,6 +1,6 @@
 import { delay } from 'redux-saga'
 import { call , spawn , put , take, takeLatest, takeEvery, select } from 'redux-saga/effects';
-import * as counterActions from '../modules/Counter';
+import * as counterActions from '../redux/Counter';
 
 function* fetchIncrease(){
     try {
